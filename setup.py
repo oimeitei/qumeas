@@ -9,11 +9,11 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 # Define the setup configuration
 setup(
-    name="quMeas",
-    version="1.0",
+    name="qumeas",
+    version="0.1.0",
     author="Oinam Romesh Meitei",
     author_email="oinam.meitei@fau.de",
-    description="A high-performance multi-threaded library for Pauli measurements on quantum computers",
+    description="A high-performance, multi-threaded, quantum computing library for Pauli measurements.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/oimeitei/qumeas",

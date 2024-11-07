@@ -9,58 +9,28 @@
 
 ## Installation
 
-### Prerequisites
-
-quMeas requires Python 3.7 or higher, a C++ compiler, and CMake, along with the following dependencies:
-Ensure you have the following dependencies installed:
-- **Python packages**:
-	- `numpy`
-	- `scipy`
-- **Build tools**:
-	- **C++ compiler**: A modern C++ compiler that supports C++17 or later (e.g., GCC 7+, Clang 5+)
-	- **CMake**: Version 3.12 or higher
-
-quMeas depends on `Eigen` (for numerical linear algebra) and `pybind11`  (for C++/Python bindings). If these libraries are not installed on your system, quMeas includes them in the `/external` directory and will use them automatically.
-
-Additionally, to use functionalities from Qiskit for obtaining Pauli operators of Hamiltonian, state preparation, and to get measurement bits, make sure `qiskit`, `qiskit-nature`, and `qiskit-aqua` are installed.
-
-### Cloning the Repository
-
-Clone the repository with submodules (use `--recursive` if `Eigen` and `pybind11` are not installed)
+quMeas can be installed from pip
 
 ```bash
-git clone --recursive https://github.com/oimeitei/qumeas.git
+pip install qumeas
 ```
 
-### Installation with pip
+Pre-built binary wheels for Linux, Windows, and MacOS are also available at PyPI. Alternatively, to build the package and install from source,
 
-In the root directory, run
-```bash
-pip install .
-```
+1. Clone the repository (use `--recursive` if `Eigen` and `pybind11` are not installed)
+	```bash
+	git clone --recursive https://github.com/oimeitei/qumeas.git
+	```
+2. Navigate to the project directory and run the following:
+	```bash
+	python -m build
+	pip install dist/qumeas-*.whl	
+	```
+Check [installation guide](https://qumeas.readthedocs.io/en/latest/installation.html) in the documentation for more low-level installation options.
 
-### Building with CMake
 
-Alternatively, build and install quMeas using CMake:
-
-1. Create a build directory:
-	```bash
-	mkdir build && cd build
-	```
-2. Configure with CMake:
-	```bash
-	cmake ..
-	```
-3. Compile:
-	```bash
-	make -j$(nproc)
-	```
-4. Make Python find qumeas:
-	```bash
-	export PYTHONPATH=/path/to/qumeas/python:$PYTHONPATH
-	```
 ## Basic Usage
-   	 ```bash
+	```bash
 	from qumeas import PauliContainer, RandomShadow, QCumulant
 
 	# Get measurement basis and outcomes(basis, bits) from general quantum computing
@@ -110,4 +80,4 @@ With qiskit functionalities:
 
 Documentation on Python API, `libmeas` which expose C++ functions as well as installation instruction and usage are available at `/docs`. To build the documentation locally, simply navigate to `docs` and build using `make html` or `make latexpdf`.
 
-Latest documentation is available online at [quemb.readthedocs.io](http://qumeas.readthedocs.io/)..
+Latest documentation is available online at [quemb.readthedocs.io](http://qumeas.readthedocs.io/).
