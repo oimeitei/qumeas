@@ -26,7 +26,7 @@ jobs:
 
       - name: Install build dependencies on macOS
         if: runner.os == 'macOS'
-        run: brew install libomp
+        run: brew install llvm libomp
 
       - name: Install cibuildwheel
         run: pip install cibuildwheel==2.20.0
@@ -36,8 +36,15 @@ jobs:
           CIBW_SKIP: cp36-*,cp37-*  
           CIBW_BUILD_VERBOSITY: 1
           CIBW_ENVIRONMENT_MACOS: >
-            LDFLAGS="-L/usr/local/opt/libomp/lib"
-            CPPFLAGS="-I/usr/local/opt/libomp/include"
+            LLVM_PREFIX=$(brew --prefix llvm)
+            LIBOMP_PREFIX=$(brew --prefix libomp)
+            CC=${LLVM_PREFIX}/bin/clang
+            CXX=${LLVM_PREFIX}/bin/clang++
+            CFLAGS="-Xpreprocessor -fopenmp -I${LIBOMP_PREFIX}/include"
+            CXXFLAGS="-Xpreprocessor -fopenmp -I${LIBOMP_PREFIX}/include"
+            LDFLAGS="-L${LIBOMP_PREFIX}/lib -lomp"
+            CPPFLAGS="-I${LIBOMP_PREFIX}/include"
+            PATH=${LLVM_PREFIX}/bin:${PATH}
         run: cibuildwheel --output-dir wheelhouse
 
       - name: Upload Wheels
