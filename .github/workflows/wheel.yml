@@ -36,6 +36,7 @@ jobs:
           CIBW_SKIP: cp36-*,cp37-*  
           CIBW_BUILD_VERBOSITY: 1
           CIBW_ENVIRONMENT_MACOS: >
+	    MACOSX_DEPLOYMENT_TARGET=13.0
             LLVM_PREFIX=$(brew --prefix llvm)
             LIBOMP_PREFIX=$(brew --prefix libomp)
             CC=${LLVM_PREFIX}/bin/clang
