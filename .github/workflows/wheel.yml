@@ -12,7 +12,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, macos-13, macos-14, windows-latest]
+        os: [ubuntu-latest, macos-13, windows-latest]
         python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
     steps:
       - uses: actions/checkout@v4
@@ -41,12 +41,9 @@ jobs:
             LIBOMP_PREFIX=$(brew --prefix libomp)
             CC=${LLVM_PREFIX}/bin/clang
             CXX=${LLVM_PREFIX}/bin/clang++
-            AR=${LLVM_PREFIX}/bin/llvm-ar
-            RANLIB=${LLVM_PREFIX}/bin/llvm-ranlib
-            NM=${LLVM_PREFIX}/bin/llvm-nm
-            CFLAGS="-Xpreprocessor -fopenmp -I${LIBOMP_PREFIX}/include -fuse-ld=lld"
-            CXXFLAGS="-Xpreprocessor -fopenmp -I${LIBOMP_PREFIX}/include -fuse-ld=lld"
-            LDFLAGS="-L${LIBOMP_PREFIX}/lib -lomp -fuse-ld=lld"
+            CFLAGS="-Xpreprocessor -fopenmp -I${LIBOMP_PREFIX}/include"
+            CXXFLAGS="-Xpreprocessor -fopenmp -I${LIBOMP_PREFIX}/include"
+            LDFLAGS="-L${LIBOMP_PREFIX}/lib -lomp"
             CPPFLAGS="-I${LIBOMP_PREFIX}/include"
             PATH=${LLVM_PREFIX}/bin:${PATH}
         run: cibuildwheel --output-dir wheelhouse

@@ -13,7 +13,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 # Define the setup configuration
 setup(
-    name="QuMeas",
+    name="quMeas",
     version="1.0",
     author="Oinam Romesh Meitei",
     author_email="oinam.meitei@fau.de",
