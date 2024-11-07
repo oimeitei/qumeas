@@ -1,6 +1,6 @@
-# QuMeas
+# quMeas
 
-**QuMeas** is a high-performance multi-threaded library for computing expectation values of Pauli strings using randomized measurement techniques and cumulant expansion of Pauli operators (strings). It combines **classical shadow tomography** with **statistical cumulant expansion** to efficiently estimate Pauli expectation values. Designed with a multi-layered parallelization strategy and optimized C++ backend, QuMeas scales efficiently on multi-core systems, making it ideal to incorporate in large-scale quantum algorithms such as **VQE** for molecular simulation, **QAOA** for combinatorial optimization, or any other quantum algorithm with requires *expectation value of Pauli operators*.
+**quMeas** is a high-performance multi-threaded library for computing expectation values of Pauli strings using randomized measurement techniques and cumulant expansion of Pauli operators (strings). It combines **classical shadow tomography** with **statistical cumulant expansion** to efficiently estimate Pauli expectation values. Designed with a multi-layered parallelization strategy and optimized C++ backend, quMeas scales efficiently on multi-core systems, making it ideal to incorporate in large-scale quantum algorithms such as **VQE** for molecular simulation, **QAOA** for combinatorial optimization, or any other quantum algorithm with requires *expectation value of Pauli operators*.
 
 ## Features
 - **Randomized Measurements**: Implements an efficient classical shadow tomography quantum measurement to estimate expectation values with randomized measurement bases.
@@ -11,7 +11,7 @@
 
 ### Prerequisites
 
-QuMeas requires Python 3.7 or higher, a C++ compiler, and CMake, along with the following dependencies:
+quMeas requires Python 3.7 or higher, a C++ compiler, and CMake, along with the following dependencies:
 Ensure you have the following dependencies installed:
 - **Python packages**:
 	- `numpy`
@@ -20,7 +20,7 @@ Ensure you have the following dependencies installed:
 	- **C++ compiler**: A modern C++ compiler that supports C++17 or later (e.g., GCC 7+, Clang 5+)
 	- **CMake**: Version 3.12 or higher
 
-QuMeas depends on `Eigen` (for numerical linear algebra) and `pybind11`  (for C++/Python bindings). If these libraries are not installed on your system, QuMeas includes them in the `/external` directory and will use them automatically.
+quMeas depends on `Eigen` (for numerical linear algebra) and `pybind11`  (for C++/Python bindings). If these libraries are not installed on your system, quMeas includes them in the `/external` directory and will use them automatically.
 
 Additionally, to use functionalities from Qiskit for obtaining Pauli operators of Hamiltonian, state preparation, and to get measurement bits, make sure `qiskit`, `qiskit-nature`, and `qiskit-aqua` are installed.
 
@@ -41,7 +41,7 @@ pip install .
 
 ### Building with CMake
 
-Alternatively, build and install QuMeas using CMake:
+Alternatively, build and install quMeas using CMake:
 
 1. Create a build directory:
 	```bash
