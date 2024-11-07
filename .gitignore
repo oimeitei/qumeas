@@ -1,0 +1,159 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions and compiled libraries
+*.so
+*.dylib
+*.dll
+*.pyd
+*.lib
+*.exp
+
+# Virtual environment directories
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+wheelhouse/
+_skbuild/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# CMake build files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+CMakeScripts/
+Testing/
+CTestTestfile.cmake
+install_manifest.txt
+compile_commands.json
+Cache/
+CMakeTmp/
+CMakeError.log
+CMakeOutput.log
+*_build*/
+
+# Generated object files and libraries
+*.o
+*.obj
+*.a
+*.lo
+*.la
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Mypy type checker
+.mypy_cache/
+
+# Pytest cache
+.pytest_cache/
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/build/
+docs/_build
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Temporary files and folders
+*.tmp
+*.temp
+tmp/
+temp/
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.iml
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Backup files
+*.bak
+*.swp
+*.swo
+*~
+
+# Git conflict files
+*.orig
+
+# Cibuildwheel output
+wheelhouse/
+
+# PyInstaller
+*.spec
+*.manifest
+
+# Anaconda environments
+.env
+.conda
+
+# MacOS files
+.DS_Store
+
+# Windows files
+Thumbs.db
+
+# CUDA
+*.i
+*.ii
+*.gpu
+*.ptx
+*.cubin
+*.fatbin
+
