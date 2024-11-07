@@ -1,0 +1,59 @@
+===============
+Parallelization
+===============
+
+For optimal performancs, 
+
+
+
+employs several shared memory parallelization techniques for optimal performance. These approaches includes OpenMP-based parallelism, multithreading, and asynchronous tasks, as implemented across various C++ functions. At the Python-level, parallelization is achieved using Python's native multiprocessing in ``RandonShadow`` for measurement of random basis in the classical shadow tomography protocol.
+
+**OpenMP Parallelization**
+
+QuMeas extensively uses OpenMP to parallelize compute-intensive loops within functions, especially when these functions are called in a multithreaded or asynchronous context. By combining OpenMP with multithreading and asynchronous tasks, Qumeas achieves highly efficient, layered parallelization. This strategy enables both task-level and data-level parallelism, maximizing CPU utilization and reducing computation time for computing expectation values of Pauli strings using cumulant exansion and non-crossing partitioning.
+
+As an example, ``compute_expectation_basis`` in ``libmeas`` calls ``compute_expectation_pauli_from_bits`` within an async task. Each async task processes one Pauli string from ``pauli_list``, with OpenMP further parallelizing the internal loop to efficiency handle measuement bits. Here, the combination of async tasks and OpenMP enables parallel distribution of tasks and efficient data processing within each task.
+
+
+**Multithreading with Task Queues**
+
+Qumeas uses multithreading to handle task-based concurrency, particularly for generating non-crossing partitions. This is achieved using a `TaskQueue` and a thread pool.
+
+### Key Components
+- **`TaskQueue`**: Manages tasks in a thread-safe manner with `push`, `pop`, and `set_done` methods to handle task addition, retrieval, and completion signaling.
+- **`generate_partition_non_crossing`**: Initializes a thread pool where each thread runs `worker_function` to process partitioning tasks concurrently, using a mutex to safely update shared results (`all_partitions`).
+
+This approach enables efficient, scalable task-based parallelism, making it possible to adjust the thread pool size to utilize available CPU cores effectively.
+
+
+
+
+1. **`compute_expectation_pauli_from_bits`**:
+   - **Context**: This function is called within an async task in `compute_expectations_basis`. Each async task processes one Pauli string from `pauli_list`, with OpenMP further parallelizing the internal loop to efficiently handle measurement data.
+   - **OpenMP Usage**: The OpenMP directive parallelizes the outer loop, iterating over `bitlists` and `outbits` rows. Reduction operations (`+`) accumulate results across threads, ensuring accurate aggregation of expectations across all qubits.
+   - **Benefit**: The combined use of async tasks and OpenMP enables both parallel task distribution and efficient data processing within each task.
+
+
+Parallelization Overview
+========================
+
+Qumeas employs several parallelization techniques to enhance performance and efficiency in quantum measurement and partitioning tasks. This document details these approaches, including OpenMP-based parallelism, multithreading, and asynchronous tasks, as implemented across various C++ functions.
+
+## OpenMP Parallelization
+
+OpenMP is used to parallelize compute-intensive loops, particularly in the functions responsible for expectation and cumulant calculations. By distributing loop iterations across multiple threads, OpenMP enables efficient execution of the following:
+
+
+
+By distributing loop iterations across multiple threads, OpenMP enables efficient execution of the following:
+
+
+Qumeas leverages parallelization to enhance computational efficiency during quantum simulations. 
+Parallelization is implemented at multiple levels:
+
+- **Python-Level Async Tasks**: Functions like `partition_expectation_bits` in the `QCumulant` class use 
+  asynchronous tasks to distribute work across Pauli string blocks, improving efficiency.
+  
+- **C++ with OpenMP**: In performance-critical C++ code, such as `run_block_bits`, OpenMP is employed 
+  for intra-measurement parallelization, effectively distributing computations across available CPU threads.
+

@@ -1,0 +1,32 @@
+'''
+Compute expectation value using cumulant expansion of Pauli strings.
+This uses measurement output from random measurement protocol.
+
+'''
+from qumeas.qiskit_utils import Mole
+from qumeas import RandomShadow, QCumulant
+
+# Get pre-defined molecule
+h2o_mol = Mole(atom='h2o')
+
+# Inititalize random measurements
+my_state = RandomShadow(h2o_mol)
+
+# Measure using default setups
+expectationRandom = my_state.measure(M = 1000, # M: number of random measurement basis
+                                   nproc = 1)
+
+print(f'Expectation value from random measurement protocol is: {expectationRandom:>12.8f}')
+
+# Initialize QCumulant
+myCumu = QCumulant(protocol=my_state)
+
+# Generate non-crossing partition up to a maximum block size of 4
+myCumu.generate_partitions(max_size=4,
+                           num_threads=4)
+
+expectationCumu = myCumu.compute_expectation_bits()
+print(f'Expectation value from cumulant expansion is: {expectationCumu:>12.8f}')
+
+
+      
