@@ -9,7 +9,7 @@ import os, sys
 
 
 sys.path.insert(0, os.path.abspath('../../python'))
-project = 'QuMeas'
+project = 'quMeas'
 copyright = '2024, Oinam Romesh Meitei'
 author = 'Oinam Romesh Meitei'
 
@@ -28,4 +28,4 @@ exclude_patterns = []
 
 html_theme = 'furo'
 html_static_path = ['_static']
-html_title = 'QuMeas'
+html_title = 'quMeas'
