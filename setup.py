@@ -3,10 +3,6 @@ from setuptools import find_packages
 import os, sys
 
 
-cmake_args = []
-python_executable = sys.executable
-cmake_args.append(f"-DPYTHON_EXECUTABLE:FILEPATH={python_executable}")
-
 # Read the long description from README.md
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
@@ -37,5 +33,7 @@ setup(
         "numpy",
         "scipy"
     ],
-    # cmake_args=cmake_args,
+    extra_require={
+        "qiskit": ["qiskit", "qiskit_nature", "qiskit_aer"],
+    },
 )

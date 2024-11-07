@@ -1,7 +1,7 @@
 libmeas
 =======
 
-Qumeas includes a set of high-performance C++ functions for quantum measurement using classical shadow tomography and cumulant exansion, compiled into ``libmeas``. These functions are accessible in Python through Pybind11 bindings. They can be simply imported like any other Python modules
+``quMeas`` includes a set of high-performance C++ functions for quantum measurement using classical shadow tomography and cumulant exansion, compiled into ``libmeas``. These functions are accessible in Python through Pybind11 bindings. They can be simply imported like any other Python modules
 
 ::
 

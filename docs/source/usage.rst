@@ -1,7 +1,7 @@
 Usage Guide
 ===========
 
-This section shows how to use ``QuMeas`` library to compute expectation values of Pauli strings. See ``/examples`` for more.
+This section shows how to use ``quMeas`` library to compute expectation values of Pauli strings. See ``/examples`` for more.
 
 
 **Computing Expectation Values with Randomized Measurement and Cumulant Expansion**

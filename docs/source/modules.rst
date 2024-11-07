@@ -1,7 +1,7 @@
 Python API
 ==========
 
-This section provides an overview of the main Python APIs in QuMeas library
+This section provides an overview of the main Python APIs in quMeas library
 
 .. toctree::
    :maxdepth: 1
