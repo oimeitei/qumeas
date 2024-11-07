@@ -88,4 +88,4 @@ Alternatively, build and install quMeas using CMake:
 
 Documentation on Python API, `libmeas` which expose C++ functions as well as installation instruction and usage are available at `/docs`. To build the documentation locally, simply navigate to `docs` and build using `make html` or `make latexpdf`.
 
-Latest documentation is hosted here online.
+Latest documentation is available online at [quemb.readthedocs.io](http://qumeas.readthedocs.io/)..
