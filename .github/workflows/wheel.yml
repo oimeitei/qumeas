@@ -35,7 +35,7 @@ jobs:
         env:
           CIBW_SKIP: cp36-*,cp37-*  
           CIBW_BUILD_VERBOSITY: 1
-	  CIBW_ENVIRONMENT_MACOS: |
+	  CIBW_ENVIRONMENT_MACOS: >
 	    LDFLAGS="-L/usr/local/opt/libomp/lib"
 	    CPPFLAGS="-I/usr/local/opt/libomp/include"
         run: cibuildwheel --output-dir wheelhouse
