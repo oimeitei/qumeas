@@ -21,7 +21,7 @@ jobs:
         id: tag_info
         run: |
           TAG_NAME=${GITHUB_REF##*/}
-          TAG_MESSAGE=$(git for-each-ref refs/tags/$TAG_NAME --format='%(contents)')
+          TAG_MESSAGE=$(git for-each-ref refs/tags/ --format='%(contents)')
           echo "TAG_NAME=${TAG_NAME}" >> $GITHUB_OUTPUT
           echo "TAG_MESSAGE<<EOF" >> $GITHUB_OUTPUT
           echo "${TAG_MESSAGE}" >> $GITHUB_OUTPUT

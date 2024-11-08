@@ -39,7 +39,8 @@ setup(
         "Programming Language :: C++",
         "Operating System :: OS Independent",
         "License :: OSI Approved :: Apache Software License",  
-        "Topic :: Quantum Computing :: Scientific/Engineering :: Physics",
+        "Topic :: Software Development :: Libraries",
+        "Topic :: Scientific/Engineering :: Physics",
     ],
     python_requires=">=3.8",
     install_requires=[
