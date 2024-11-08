@@ -28,5 +28,5 @@ job:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release create ${{ steps.get_tag.outputs.TAG_NAME }} --title "Release ${{ steps.get_tag.outputs.TAG_NAME }}" --notes ${{ steps.tag_info.outputs.TAG_MESSAGE }}
+          gh release create "${{ steps.get_tag.outputs.TAG_NAME }}" --title "Release ${{ steps.get_tag.outputs.TAG_NAME }}" --notes "${{ steps.tag_info.outputs.TAG_MESSAGE }}"
 	
