@@ -21,9 +21,9 @@ Pre-built binary wheels for Linux, Windows, and MacOS are also available at PyPI
 	```bash
 	git clone --recursive https://github.com/oimeitei/qumeas.git
 	```
-2. Navigate to the project directory and run the following:
+2. Navigate to the project directory, build wheel and install by running the following:
 	```bash
-	python -m build
+	python -m build --wheel
 	pip install dist/qumeas-*.whl	
 	```
 Check [installation guide](https://qumeas.readthedocs.io/en/latest/installation.html) in the documentation for more low-level installation options.

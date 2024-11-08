@@ -15,7 +15,7 @@ add_compile_options(-fPIC)
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
 # Output directories
-# set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/python/qumeas)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/python/qumeas)
 
 # Eigen
 find_package(Eigen3 QUIET)
