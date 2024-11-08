@@ -24,8 +24,6 @@ job:
           echo "TAG_MESSAGE<<EOF" >> $GITHUB_OUTPUT
           echo "${TAG_MESSAGE}" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
-
-echo "TAG_NAME=${GITHUB_REF##*/}" >> $GITHUB_OUTPUT
       - name: Create Github Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
