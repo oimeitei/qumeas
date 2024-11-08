@@ -38,7 +38,7 @@ setup(
         "Programming Language :: Python :: 3",
         "Programming Language :: C++",
         "Operating System :: OS Independent",
-        "License :: Aphache 2.0",  
+        "License :: OSI Approved :: Apache Software License",  
         "Topic :: Quantum Computing :: Scientific/Engineering :: Physics",
     ],
     python_requires=">=3.8",
