@@ -26,6 +26,6 @@ jobs:
           echo "EOF" >> $GITHUB_OUTPUT
       - name: Create Github Release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.QUMEAS_WORKFLOW }}
         run: |
           gh release create "${{ steps.tag_info.outputs.TAG_NAME }}" --title "Release ${{ steps.tag_info.outputs.TAG_NAME }}" --notes "${{ steps.tag_info.outputs.TAG_MESSAGE }}"
