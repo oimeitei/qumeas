@@ -16,7 +16,7 @@ job:
       - name: Checkout Repository
         uses: actions/checkout@4
       - name: Get Tag Name and Message
-        id: get_tag
+        id: tag_info
         run: |
           TAG_NAME=${GITHUB_REF##*/}
           TAG_MESSAGE=$(git for-each-ref refs/tags/$TAG_NAME --format='%(contents)')
@@ -28,5 +28,5 @@ job:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release create "${{ steps.get_tag.outputs.TAG_NAME }}" --title "Release ${{ steps.get_tag.outputs.TAG_NAME }}" --notes "${{ steps.tag_info.outputs.TAG_MESSAGE }}"
+          gh release create "${{ steps.tag_info.outputs.TAG_NAME }}" --title "Release ${{ steps.tag_info.outputs.TAG_NAME }}" --notes "${{ steps.tag_info.outputs.TAG_MESSAGE }}"
 	
