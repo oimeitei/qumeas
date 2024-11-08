@@ -15,7 +15,7 @@ job:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@4
-      - name: Get Tag Name and Message:
+      - name: Get Tag Name and Message
         id: get_tag
         run: |
           TAG_NAME=${GITHUB_REF##*/}
