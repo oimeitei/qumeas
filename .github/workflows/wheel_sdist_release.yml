@@ -73,7 +73,9 @@ jobs:
   upload_pypi:
     needs: [build_wheels, build_sdist]
     runs-on: ubuntu-latest
-    environment: pypi
+    environment:
+      name: pypi
+      url : https://pypi.org/p/qumeas
     permissions:
       id-token: write
     if: github.event_name == 'release' && github.event.action == 'published'
@@ -86,5 +88,3 @@ jobs:
           merge-multiple: true
 
       - uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          password: ${{ secrets.pypi_password }}       
