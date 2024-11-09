@@ -1,4 +1,8 @@
 # quMeas
+[![PyPI version](https://badge.fury.io/py/qumeas.svg)](https://badge.fury.io/py/qumeas)
+[![Tests](https://github.com/oimeitei/qumeas/actions/workflows/test_light.yml/badge.svg)](https://github.com/oimeitei/qumeas/actions/workflows/test_light.yml)
+[![Documentation Status](https://readthedocs.org/projects/qumeas/badge/?version=latest)](https://qumeas.readthedocs.io/en/latest/?badge=latest)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 **quMeas** is a high-performance multi-threaded library for computing expectation values of Pauli strings using randomized measurement techniques and cumulant expansion of Pauli operators (strings). It combines **classical shadow tomography** with **statistical cumulant expansion** to efficiently estimate Pauli expectation values. Designed with a multi-layered parallelization strategy and optimized C++ backend, quMeas scales efficiently on multi-core systems, making it ideal to incorporate in large-scale quantum algorithms such as **VQE** for molecular simulation, **QAOA** for combinatorial optimization, or any other quantum algorithm that requires *expectation value of Pauli operators*, particularly long Pauli strings.
 
