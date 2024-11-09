@@ -1,6 +1,7 @@
 # quMeas
 [![PyPI version](https://badge.fury.io/py/qumeas.svg)](https://badge.fury.io/py/qumeas)
 [![Tests](https://github.com/oimeitei/qumeas/actions/workflows/test_light.yml/badge.svg)](https://github.com/oimeitei/qumeas/actions/workflows/test_light.yml)
+[![codecov](https://codecov.io/github/oimeitei/qumeas/graph/badge.svg?token=0RWJXUEG3E)](https://codecov.io/github/oimeitei/qumeas)
 [![Documentation Status](https://readthedocs.org/projects/qumeas/badge/?version=latest)](https://qumeas.readthedocs.io/en/latest/?badge=latest)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
