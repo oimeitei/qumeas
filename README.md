@@ -15,7 +15,7 @@ quMeas can be installed from pip
 pip install qumeas
 ```
 
-Pre-built binary wheels for Linux, Windows, and MacOS are also available at PyPI. Alternatively, to build the package and install from source,
+Pre-built binary wheels for Linux and MacOS are also available at PyPI. Alternatively, to build the package and install from source,
 
 1. Clone the repository:
 	```bash

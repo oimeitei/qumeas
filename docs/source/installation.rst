@@ -5,7 +5,7 @@ This section provides instructions to various ways of installing quMeas. The rec
 
   pip install qumeas
 
-PyPI also host pre-built binary wheels for Linux, Windows, and MacOS. Wheels are available for Python 3.8 - 3.12. For a more low-level installation, see below to install from source. 
+PyPI also host pre-built binary wheels for Linux and MacOS Wheels are available for Python 3.8 - 3.12. For a more low-level installation, see below to install from source. 
 
 
 Installation from source
