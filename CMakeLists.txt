@@ -17,18 +17,40 @@ include_directories(${CMAKE_SOURCE_DIR}/include)
 # Output directories
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/python/qumeas)
 
+# Directory for eigen & pybind11
+set(EXTERNAL_DIR ${CMAKE_SOURCE_DIR}/external)
+file(MAKE_DIRECTORY ${EXTERNAL_DIR})
+message(STATUS "Created external directory for Eigen & pybind11 if not found")
+
+function(clone_if_missing url dir)
+    if(NOT EXISTS ${dir})
+        message(STATUS "Cloning ${url} into ${dir}...")
+        execute_process(COMMAND git clone --depth 1 ${url} ${dir})
+    else()
+        message(STATUS "${dir} exists. Skipping clone.")
+    endif()
+endfunction()
+
 # Eigen
 find_package(Eigen3 QUIET)
 if(NOT TARGET Eigen3::Eigen)
-    message(STATUS "Eigen3 not found. Using the version in external/eigen.")
-    include_directories(${CMAKE_SOURCE_DIR}/external/eigen)
+    message(STATUS "Eigen3 not found. Clonning into /external.")
+    set(EIGEN_DIR ${EXTERNAL_DIR}/eigen)
+    clone_if_missing("https://gitlab.com/libeigen/eigen.git" ${EIGEN_DIR})
+    include_directories(${EIGEN_DIR})
+else()
+    message(STATUS "Eigen found.")
 endif()
 
 # pybind11
 find_package(pybind11 QUIET)
 if(NOT TARGET pybind11::module)
-    message(STATUS "pybind11 not found. Using the version in external/pybind11.")
-    add_subdirectory(external/pybind11)
+    message(STATUS "pybind11 not found. Clonning into /external.")
+    set(PYBIND11_DIR ${EXTERNAL_DIR}/pybind11)
+    clone_if_missing("https://github.com/pybind/pybind11.git" ${PYBIND11_DIR})
+    add_subdirectory(${PYBIND11_DIR})
+else()
+    message(STATUS "pybind11 found")
 endif()
 
 

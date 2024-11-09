@@ -25,13 +25,13 @@ Prerequisites
 - **pybind11**: Library for binding C++ code to Python
 - **qiskit**, **qiskit-nature**, **qiskit-aer**: Quantum computing SDK
 
-If `Eigen` and `pybind11` are not installed, quMeas will use the versions included in the `/external` directory. Qiskit is required to use ``qumeas.qiskit_utils.Mole`` and ``qumeas.qiskit_utils.qiskitStatePreparation``, to get Hamiltonian for molecules and to use qiskit's funcitonalities to get measurement outcomes.
+If `Eigen` and `pybind11` are not installed, quMeas will automatically install during build at `/external` directory. Qiskit is required to use ``qumeas.qiskit_utils.Mole`` and ``qumeas.qiskit_utils.qiskitStatePreparation``, to get Hamiltonian for molecules and to use qiskit's funcitonalities to get measurement outcomes.
 
-When cloning the repository, make sure to include the `--recursive` flag to download all submodules:
+Clone the repository:
 
 ::
    
-   git clone --recursive https://github.com/oimeitei/qumeas.git
+   git clone https://github.com/oimeitei/qumeas.git
 
 
 Option 1: Install with ``build`` and ``pip``

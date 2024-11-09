@@ -1,6 +1,6 @@
 # quMeas
 
-**quMeas** is a high-performance multi-threaded library for computing expectation values of Pauli strings using randomized measurement techniques and cumulant expansion of Pauli operators (strings). It combines **classical shadow tomography** with **statistical cumulant expansion** to efficiently estimate Pauli expectation values. Designed with a multi-layered parallelization strategy and optimized C++ backend, quMeas scales efficiently on multi-core systems, making it ideal to incorporate in large-scale quantum algorithms such as **VQE** for molecular simulation, **QAOA** for combinatorial optimization, or any other quantum algorithm with requires *expectation value of Pauli operators*.
+**quMeas** is a high-performance multi-threaded library for computing expectation values of Pauli strings using randomized measurement techniques and cumulant expansion of Pauli operators (strings). It combines **classical shadow tomography** with **statistical cumulant expansion** to efficiently estimate Pauli expectation values. Designed with a multi-layered parallelization strategy and optimized C++ backend, quMeas scales efficiently on multi-core systems, making it ideal to incorporate in large-scale quantum algorithms such as **VQE** for molecular simulation, **QAOA** for combinatorial optimization, or any other quantum algorithm that requires *expectation value of Pauli operators*, particularly long Pauli strings.
 
 ## Features
 - **Randomized Measurements**: Implements an efficient classical shadow tomography quantum measurement to estimate expectation values with randomized measurement bases.
@@ -17,7 +17,7 @@ pip install qumeas
 
 Pre-built binary wheels for Linux, Windows, and MacOS are also available at PyPI. Alternatively, to build the package and install from source,
 
-1. Clone the repository (use `--recursive` if `Eigen` and `pybind11` are not installed)
+1. Clone the repository:
 	```bash
 	git clone --recursive https://github.com/oimeitei/qumeas.git
 	```
@@ -61,4 +61,4 @@ expectation_cumulant = myCumu.compute_expectation_bits()
 
 Documentation on Python API, `libmeas` which expose C++ functions as well as installation instruction and usage are available at `/docs`. To build the documentation locally, simply navigate to `docs` and build using `make html` or `make latexpdf`.
 
-Latest documentation is available online at [quemb.readthedocs.io](http://qumeas.readthedocs.io/).
+Latest documentation is available online at [quemb.readthedocs.io](http://qumeas.readthedocs.io/en/stable).
